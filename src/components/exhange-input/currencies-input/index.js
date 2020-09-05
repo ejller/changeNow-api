@@ -83,7 +83,7 @@ const CurrenciesInput = ({ position }) => {
           <Dropdown>
             {_.map(currencyList, (el) => (
               <Option key={el.ticker} onClick={() => handleChoose(el.ticker)}>
-                <img src={el.image} alt="icon" />
+                <img src={`https://changenow.io/images/coins/${el.ticker}.svg`} alt="icon" />
                 <span>{el.ticker.toUpperCase()}</span>
                 <span>{el.name}</span>
               </Option>

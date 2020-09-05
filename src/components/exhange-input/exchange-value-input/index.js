@@ -49,7 +49,7 @@ const ExchangeValueInput = ({ position }) => {
         disabled={position === "right" || !currrencyInputValue}
       />
       <Currency onClick={hadleRemoveCurrency}>
-        <img src="https://changenow.io/images/coins/eth.svg" alt="Clear" />
+        <img src={`https://changenow.io/images/coins/${currencyName}.svg`} alt="Clear" />
         <span>{currencyName.toUpperCase()}</span>
       </Currency>
     </Wrapper>
