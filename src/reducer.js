@@ -20,7 +20,7 @@ export default (state = initState, action) => {
     case types.changeCurrency.remove: {
       const data = state.data;
       _.remove(data, (el) => el.position === action.payload);
-      data[0].value = undefined;
+      if (data[0]) data[0].value = undefined;
       return { ...state, data, loading: false, errorMessage: "" };
     }
 
