@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Page = styled.div`
   padding: 150px 0;
-  text-align: left;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 `;
 
 const Title = styled.h3`
@@ -17,10 +17,12 @@ const SubTitle = styled.span`
 `;
 
 const FormWrapper = styled.div`
-  padding: 30px 0;
+  position: relative;
+  padding: 27px 0;
   & > div {
     position: relative;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     &:first-of-type {
       margin-bottom: 45px;
@@ -28,17 +30,32 @@ const FormWrapper = styled.div`
   }
 `;
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 const Image = styled.img`
-  width: 22px;
   margin: 0 13px;
+  width: 22px;
+  height: 25px;
   cursor: pointer;
+  &#loading {
+    animation: ${rotate} 1s linear infinite;
+  }
 `;
 
 const Input = styled.input`
+  padding: 15px 10px;
   background-color: white;
+  color: #282828;
   border: #a7a7a7 solid 1px;
   border-radius: 3px;
-  padding: 15px 10px;
   width: 60%;
   &:focus {
     outline: none;
@@ -46,17 +63,32 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
+  padding: 15px 30px;
   background-color: #137e6e;
+  color: white;
   border: none;
   border-radius: 3px;
-  color: white;
-  padding: 15px 30px;
+  font-size: 13px;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #2e9a8a;
+  }
 `;
 
 const Label = styled.label`
   position: absolute;
-  font-size: 13px;
   top: -20px;
+  font-size: 13px;
+`;
+const ErrorMessage = styled.span`
+  position: absolute;
+  top: 11px;
+  font-size: 13px;
+  color: red;
+  margin-bottom: 4px;
 `;
 
-export { Title, SubTitle, FormWrapper, Image, Page, Button, Input, Label };
+export { Title, SubTitle, FormWrapper, Image, Page, Button, Input, Label, ErrorMessage };

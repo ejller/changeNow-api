@@ -12,11 +12,11 @@ const Wrapper = styled.div`
 
 const Input = styled.input`
   box-sizing: border-box;
-  background-color: initial;
+  padding: 13px 7px;
   width: 200px;
+  background-color: initial;
   color: #282828;
   font-size: 15px;
-  padding: 13px 7px;
   border: none;
   &:focus {
     outline: none;
@@ -24,18 +24,18 @@ const Input = styled.input`
 `;
 
 const ClearIcon = styled.img`
-  cursor: pointer;
   position: absolute;
-  height: 11px;
   top: 16px;
   right: 16px;
+  height: 11px;
+  cursor: pointer;
 `;
 
 const Dropdown = styled.div`
   box-sizing: border-box;
   width: 100%;
   border-top: #a7a7a7 solid 1px;
-  max-height: 120px;
+  max-height: 125px;
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;
@@ -45,8 +45,8 @@ const Dropdown = styled.div`
 const Option = styled.div`
   box-sizing: border-box;
   padding: 8px 7px;
-  cursor: pointer;
   display: flex;
+  cursor: pointer;
   &:first-of-type {
     padding-top: 13px;
   }
@@ -61,9 +61,9 @@ const Option = styled.div`
   & span {
     &:first-of-type {
       display: inline-block;
+      color: #282828;
       margin-left: 5px;
       margin-right: 14px;
-      color: #282828;
       font-size: 13px;
     }
     color: #a7a7a7;

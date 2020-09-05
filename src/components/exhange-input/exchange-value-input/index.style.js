@@ -1,31 +1,43 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  display: inline-block;
+  width: 230px;
+  display: flex;
+  align-items: center;
   background-color: white;
   border: #a7a7a7 solid 1px;
   border-radius: 4px;
-  width: 230px;
 `;
 
 const Input = styled.input`
+  padding: 13px 7px;
+  width: 73%;
+
+  font-size: 15px;
   box-sizing: border-box;
   background-color: initial;
-  width: 73%;
   color: #282828;
-  font-size: 15px;
-  padding: 13px 7px;
   border: none;
   border-right: #a7a7a7 solid 1px;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
   &:focus {
     outline: none;
   }
 `;
 
 const Currency = styled.div`
-  cursor: pointer;
-  display: inline-flex;
   padding: 0px 13px 0px 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   & img {
     width: 14px;
     margin-right: 3px;
